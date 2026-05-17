@@ -1,0 +1,39 @@
+📑 Brief de Desarrollo Web: TITANICA, C.A.
+1. Visión General y Estética
+TITANICA es una empresa de Gestión Integral (Manejo Integral de Plagas - MIP, Áreas Verdes y Servicios Generales). La web debe ser una plataforma de alta gama que proyecte solidez industrial.
+Colores corporativos: Rojo vibrante, Gris Carbón y Gris Medio (base de uniformes).
+Sedes: Maturín (Principal), Punta de Mata, Barcelona y Puerto Ordaz.
+2. Estructura del Sitio (Sitemap)
+A. Lado Público (Frontend)
+Home: Impacto visual con servicios destacados y propuesta de valor.
+Trayectoria: Historia enfocada en la robustez técnica y acompañamiento estratégico.
+Sedes: Mapa o listado interactivo con las 4 ubicaciones.
+Módulo de Presupuesto: (Ver detalle en sección 3).
+B. Portal del Cliente (Acceso Privado con Usuario/Clave)
+El sistema debe segmentar la información en dos niveles:
+I. Área Común de Cumplimiento (Para todos los clientes):
+Documentos TITANICA: RIF, Acta Constitutiva, Solvencias (IVSS, Banavih), Seguros.
+Permisología: Registros RACDA, INSAI, Conformidades Sanitarias.
+Directorio de Personal Técnico: Fichas individuales (orden alfabético) con:
+Foto, Cédula y Carnet.
+Certificaciones (MIP, Manipulación de Alimentos, Seguridad Industrial).
+Salud (Exámenes médicos y certificados de aptitud).
+Seguridad (Notificaciones de Riesgo y Entrega de EPP).
+II. Área "Mi Instalación" (Exclusiva y Segregada):
+Seguridad: El Cliente A no puede ver los archivos del Cliente B.
+Contenido: Reportes de servicio técnicos (PDF), Cronogramas de visitas y Galerías de fotos/evidencias de esa instalación específica.
+3. Especificaciones del Formulario de Presupuesto
+Este formulario debe capturar la data técnica necesaria para generar cotizaciones y valuaciones:
+Datos Fiscales: Razón Social y RIF (Campo obligatorio con adjunto en PDF/JPG).
+Datos de Contacto: Nombre del receptor, Teléfono y Correo.
+Detalles Técnicos: * Dirección exacta de la instalación.
+Selector de Sede TITANICA (Maturín, Barcelona, Puerto Ordaz, Punta de Mata).
+Tipo de Instalación (Planta, Almacén, Comercial, etc.).
+Servicios requeridos (Checklist: MIP, Áreas Verdes, Desinfección, Reparaciones).
+Frecuencia (Semanal, Quincenal, Mensual, Puntual).
+4. Requerimientos Técnicos de Backend
+Trazabilidad (Logs): Registro obligatorio de quién descarga qué archivo (Usuario, Archivo, Fecha, IP).
+Gestión Administrativa: Panel para carga masiva de documentos a clientes y técnicos.
+Alertas: Indicador de documentos por vencer (Exámenes de salud, permisos legales).
+Seguridad: Certificado SSL y protección de rutas privadas.
+https://docs.google.com/forms/d/e/1FAIpQLSdJIoceqCPOJkL_Un6kzEqmsqFbx531oFSmoBZsn0sns7aYDw/viewform?usp=sharing&amp;ouid=110158347956258200711
