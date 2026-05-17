@@ -11,6 +11,21 @@ const DEFAULTS = /*EDITMODE-BEGIN*/{
   "showTestimonio": true
 }/*EDITMODE-END*/;
 
+function getInitialHeroVariant() {
+  const params = new URLSearchParams(window.location.search);
+  const queryHero = params.get("hero");
+
+  if (["a", "b", "c"].includes(queryHero)) {
+    return queryHero;
+  }
+
+  if (["a", "b", "c"].includes(window.__FORCE_HERO)) {
+    return window.__FORCE_HERO;
+  }
+
+  return DEFAULTS.heroVariant;
+}
+
 function Header({ t, lang, setLang, dark }) {
   return (
     <header className={"site" + (dark ? " dark" : "")}>
@@ -38,7 +53,7 @@ function Header({ t, lang, setLang, dark }) {
 }
 
 function App() {
-  const [tweaks, setTweak] = useTweaks(DEFAULTS);
+  const [tweaks, setTweak] = useTweaks({ ...DEFAULTS, heroVariant: getInitialHeroVariant() });
   const t = window.I18N[tweaks.lang] || window.I18N.es;
 
   React.useEffect(() => {
@@ -49,12 +64,6 @@ function App() {
   React.useEffect(() => {
     window.__setHero = (v) => setTweak("heroVariant", v);
     window.__setLang = (v) => setTweak("lang", v);
-    // Honor ?hero=a|b|c on first load
-    const params = new URLSearchParams(window.location.search);
-    const h = params.get("hero");
-    if (h && ["a","b","c"].includes(h) && h !== tweaks.heroVariant) {
-      setTweak("heroVariant", h);
-    }
   }, []);
 
   const Hero = tweaks.heroVariant === "b" ? HeroB
